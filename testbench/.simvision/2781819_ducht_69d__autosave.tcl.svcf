@@ -1,0 +1,124 @@
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+261+33}] != ""} {
+    window geometry "Design Browser 1" 730x500+261+33
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope  simulator::tb_encryption 
+browser set \
+    -signalsort name
+browser yview see  simulator::tb_encryption 
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1029+0+27}] != ""} {
+    window geometry "Waveform 1" 1920x1029+0+27
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 204 \
+    -units ns \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	{simulator::tb_encryption.keyxSI[2:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.PERIOD
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_encryption.associated_dataxSI[2:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.check_time
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_encryption.cipher_text[39:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.cipher_textxSO
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.clk
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.ctr
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.encryption_readyxSO
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.encryption_startxSI
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.max
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_encryption.noncexSI[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_encryption.plain_textxSI[2:0]}
+	} ]
+waveform hierarchy expand $id
+set id [waveform add -signals  {
+	{simulator::tb_encryption.r_64xSI[6:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.r_128xSI
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.r_ptxSI
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.rst
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_encryption.tag[127:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_encryption.tagxSO
+	} ]
+
+waveform xview limits 0 10240ns
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+261+564
+
+#
+# Layout selection
+#

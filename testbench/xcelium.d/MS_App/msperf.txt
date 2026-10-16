@@ -1,0 +1,5 @@
+DMSPFEB, option -no_analogsolver
+DMSPFEB, option -no_analogsolver
+DMSPFEB, option -no_analogsolver
+DMSPFEB, option -no_analogsolver
+DMSPFEB, option -no_analogsolver

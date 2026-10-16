@@ -1,0 +1,33 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx8664.25.03.d
+-RUNMODE
+../hdl/encryption/ascon_encryption.v
+../hdl/encryption/ascon_encryption_ti.v
+../hdl/encryption/ascon_enc.v
+../hdl/encryption/fc_enc.v
+../hdl/permutation/ascon_permutation.v
+../hdl/permutation/ascon_permutation_ti.v
+../hdl/permutation/linear_layer.v
+../hdl/permutation/linear_layer_ti.v
+../hdl/permutation/roundconstant.v
+../hdl/permutation/roundconstant_ti.v
+../hdl/permutation/substitution_layer.v
+../hdl/permutation/substitution_layer_ti.v
+../hdl/roundcounter.v
+aead_parameters.v
+tb_encryption.v
+-CDSLIB
+./xcelium.d/run.lnx8664.25.03.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.25.03.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx8664.25.03.d/xllibs
+-ALLOWUNBOUND
+-hastop

@@ -1,0 +1,16 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-64bit
+-timescale
+1ns/1ns
+-f
+program_files_enc.txt
+-top
+tb_encryption
+-access
++rwc
+-gui
+-coverage
+all
