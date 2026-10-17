@@ -7,5 +7,15 @@ xcelium.d/
 *.key
 *.history
 *.vcd
+*.swp
 
 test
+
+/syn/genus.cmd*
+/syn/genus.log*
+/syn/fv/
+/syn/outputs/
+/syn/reports/
+/syn/.rs_*.tstamp
+
+
