@@ -1,0 +1,8 @@
+.simvision/
+cov_work/
+waves.shm/
+xcelium.d/
+
+*.log
+*.key
+*.history

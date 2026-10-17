@@ -1,9 +1,0 @@
-//
-// File created by:  xrun
-// Do not modify this file
-
-s1::(16Oct2026:06:42:36):( xrun ../hdl/encryption/ascon_enc.v tb_encryption.v -access +rwc -gui )&&(./xcelium.d/env.d/env.history.16Oct2026_06_42_36)
-s2::(16Oct2026:06:46:43):( xrun -64bit -f program_files_enc.txt -top tb_encryption.v -access +rwc -gui )&&(./xcelium.d/env.d/env.history.16Oct2026_06_46_43)
-s3::(16Oct2026:06:47:47):( xrun -64bit -f program_files_enc.txt -top tb_encryption -access +rwc -gui )&&(./xcelium.d/env.d/env.history.16Oct2026_06_47_47)
-s4::(16Oct2026:06:49:29):( xrun -64bit -timescale 1ns/1ns -f program_files_enc.txt -top tb_encryption -access +rwc -gui )&&(./xcelium.d/env.d/env.history.16Oct2026_06_49_29)
-s5::(16Oct2026:06:52:21):( xrun -64bit -timescale 1ns/1ns -f program_files_enc.txt -top tb_encryption -access +rwc -gui -coverage all )&&(./xcelium.d/env.d/env.history.16Oct2026_06_52_21)
