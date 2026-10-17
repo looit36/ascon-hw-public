@@ -6,3 +6,6 @@ xcelium.d/
 *.log
 *.key
 *.history
+*.vcd
+
+test
