@@ -1,11 +1,13 @@
 # ASCON Testbench Guide
 
 ## Requirements
-  - Cadence Xcelium installed 
+  - Cadence Xcelium installed
+  - Cadence vManager installed
 
 Check that the tool is available:
 ```
 xrun -version
+vmanager -version
 ```
 
 ## Prepare the testbench
