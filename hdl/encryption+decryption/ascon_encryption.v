@@ -61,7 +61,7 @@ module Encryption #(
         assign cipher_text = (encryption_ready_1)? C[Y-1 : Y-y] : 0;
     else
         assign cipher_text = 0;
-    assign state_1 = state;
+    
 
     // FSM States
     parameter IDLE              = 'd0,

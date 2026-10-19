@@ -41,6 +41,7 @@ module Ascon #(
     wire    [y-1:0]     cipher_text;
     wire    [127:0]     tag, dec_tag;
     wire                ready, encryption_start;
+    wire                encryption_ready, decryption_ready;
     wire                permutation_ready, permutation_start;
 
     // Left shift for Inputs
