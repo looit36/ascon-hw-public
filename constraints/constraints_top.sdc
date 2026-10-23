@@ -1,4 +1,4 @@
-create_clock -name clk -period 10 -waveform {0 5} [get_ports "clk"]
+create_clock -name clk -period 40 -waveform {0 20} [get_ports "clk"]
 set_clock_transition -rise 0.1 [get_clocks "clk"]
 set_clock_transition -fall 0.1 [get_clocks "clk"]
 set_clock_uncertainty -setup 0.1 [get_clocks "clk"]
@@ -11,7 +11,6 @@ set ascon_inputs [get_ports {
 	associated_dataxSI*
 	plain_textxSI*
 	encryption_startxSI
-	decryption_startxSI
 	r_64xSI*
 	r_128xSI*
 	r_ptxSI*
