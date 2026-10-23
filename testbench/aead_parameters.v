@@ -2,12 +2,8 @@
 `define r 64
 `define a 12
 `define b 6
-`define l 40
-`define y 40
+`define l 32
+`define y 32
 `define TI 0
 `define FP 0
-`define KEY 'h3ffa75efbd1705fa8f9ced62e5bb0be3
-`define NONCE 'h9691163337dd55217ea2a6b21eaa19b2
-`define AD 'h4153434f4e
-`define PT 'h6173636f6e
-`define CT 'h6173636f6e
+
