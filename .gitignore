@@ -18,4 +18,7 @@ test
 /syn/reports/
 /syn/.rs_*.tstamp
 
+/physical_design/innovus.cmd*
+/physical_design/innovus.log*
+
 

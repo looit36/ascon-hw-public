@@ -1,0 +1,6 @@
+set_db route_design_detail_end_iteration 10
+set_db route_design_with_timing_driven true
+set_db route_design_with_si_driven true
+route_design -global_detail
+
+write_db route

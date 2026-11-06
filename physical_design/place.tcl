@@ -1,0 +1,5 @@
+place_opt_design
+place_detail
+check_place
+
+write_db placeOpt
