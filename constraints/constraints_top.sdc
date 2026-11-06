@@ -1,8 +1,12 @@
+set_units -capacitance 1pF
+set_units -time 1ns
+
 create_clock -name clk -period 40 -waveform {0 20} [get_ports "clk"]
+
 set_clock_transition -rise 0.1 [get_clocks "clk"]
 set_clock_transition -fall 0.1 [get_clocks "clk"]
 set_clock_uncertainty -setup 0.1 [get_clocks "clk"]
-set_clock_uncertainly -hold 0.05 [get_clocks "clk"]
+set_clock_uncertainty -hold 0.05 [get_clocks "clk"]
 
 set ascon_inputs [get_ports {
 	rst
