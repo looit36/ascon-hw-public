@@ -14,7 +14,7 @@ write_sdf -recompute_delay_calc ascon_pnr.sdf
 write_def ascon_pnr.def
 write_stream ascon_pnr.gds
 
-report_qor > qor.rpt
+report_qor -file qor.rpt
 report_area > area.rpt
 report_power > power.rpt
 report_timing > timing.rpt
