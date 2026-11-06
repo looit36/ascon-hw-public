@@ -5,7 +5,7 @@ set_db init_hdl_search_path {
 	../hdl
 }
 
-read_libs NangateOpenCellLibrary_typical.lib
+read_mmmc ../mmmc/mmmc.tcl
 
 read_hdl {
     
@@ -24,7 +24,9 @@ read_hdl {
 
 elaborate Ascon
 
-read_sdc ../constraints/constraints_top.sdc
+init_design
+
+check_timing_intent -verbose
 
 set_db syn_generic_effort medium
 set_db syn_map_effort medium
@@ -35,11 +37,20 @@ syn_map
 syn_opt
 
 report_timing > reports/report_timing.rpt
-report_power  > reports/report_power.rpt
+
+report_power -view view_fast  > reports/power_fast.rpt
+report_power -view view_low_temp > reports/power_low_temp.rpt
+report_power -view view_slow > reports/power_slow.rpt
+report_power -view view_typical > reports/power_typical.rpt
+report_power -view view_worst_low > reports/power_worst_low.rpt
+
 report_area   > reports/report_area.rpt
 report_qor    > reports/report_qor.rpt
 
+report_design_rules > reports/design_rules.rpt
+
 write_hdl > outputs/ascon_netlist.v
-write_sdc > outputs/ascon.sdc
+write_sdc -view view_typical > outputs/ascon.sdc
+
 #write_sdf -nonegchecks -edges check_edge -timescale ns -recrem split -setuphold split > outputs/dft_delays.sdf
 
